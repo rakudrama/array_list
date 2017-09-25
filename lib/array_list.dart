@@ -1,3 +1,5 @@
+library array_list;
+
 import 'dart:math' show Random;
 
 abstract class _DelegatingList<E> implements List<E> {
