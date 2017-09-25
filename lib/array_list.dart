@@ -29,13 +29,13 @@ abstract class _DelegatingList<E> implements List<E> {
   E get last => _list.last;
   E get single => _list.single;
 
-  List<E> toList({growable: true}) => _list.toList(growable);
+  List<E> toList({growable: true}) => _list.toList(growable: growable);
   Set<E> toSet() => _list.toSet();
   
   bool any(bool test(E element)) => _list.any(test);
   bool every(bool test(E element)) => _list.every(test);
   
-  Iterable<T> map<T>(T f(E e)) => _list.map(test);
+  Iterable<T> map<T>(T f(E e)) => _list.map(f);
   Iterable<E> where(bool test(E element)) => _list.where(test);
   String join([String separator = ""]) => _list.join(separator);
 
@@ -83,9 +83,9 @@ abstract class _DelegatingList<E> implements List<E> {
   }
 
   E firstWhere(bool test(E element), {E orElse()}) =>
-      _list.firstWhere(test, orElse);
+      _list.firstWhere(test, orElse: orElse);
   E lastWhere(bool test(E element), {E orElse()}) =>
-      _list.lastWhere(test, orElse);
+      _list.lastWhere(test, orElse: orElse);
   E singleWhere(bool test(E element)) => _list.singleWhere(test);
 
   void forEach(void action(E e)) => _list.forEach(action);
@@ -100,7 +100,7 @@ abstract class _DelegatingList<E> implements List<E> {
   }
 
   void replaceRange(int start, int end, Iterable<E> replacement) {
-    _list.replaceRange(start, end.replacement);
+    _list.replaceRange(start, end, replacement);
   }
 
   void setRange(int start, int end, Iterable<E> iterable, [int skipCount = 0]) {
