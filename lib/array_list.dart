@@ -48,17 +48,20 @@ abstract class _DelegatingList<E> implements List<E> {
   E reduce(E combine(E value, E element)) => _list.reduce(combine);
   Iterable<T> expand<T>(Iterable<T> f(E element)) => _list.expand(f);
 
-  void add(E e) => _list.add(e);
+  void add(E e) {
+    _list.add(e);
+  }
   E removeLast() => _list.removeLast();
   void insert(int index, E element) {
     _list.insert(insert, element);
   }
 
-  void addAll(Iterable<E> iterable) => _list.addAll(iterable);
+  void addAll(Iterable<E> iterable) {
+    _list.addAll(iterable);
+  }
   void setAll(int index, Iterable<E> iterable) {
     _list.setAll(index, iterable);
   }
-
   void insertAll(int index, Iterable<E> iterable) {
     _list.insertAll(index, iterable);
   }
