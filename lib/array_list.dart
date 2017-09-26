@@ -109,7 +109,7 @@ abstract class _DelegatingList<E> implements List<E> {
 
   E removeLast() => _list.removeLast();
   void insert(int index, E element) {
-    _list.insert(insert, element);
+    _list.insert(index, element);
   }
 
   void addAll(Iterable<E> iterable) {
