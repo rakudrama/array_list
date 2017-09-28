@@ -1,5 +1,5 @@
 name: array_list
-version: 0.1
+version: 0.1.0
 author: Stephen Adams <sra@google.com>
 description: Array and ArrayList wrappers for system List implementation for improving dart2js type analysis.
 homepage: https://github.com/rakudrama/array_list
